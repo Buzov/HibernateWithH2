@@ -27,5 +27,6 @@
     
         <mapping class="com.quasar.hibernateh2.dao.entity.student.Student" />
         <mapping class="com.quasar.hibernateh2.dao.entity.student.Role" />
+        <mapping class="com.quasar.hibernateh2.dao.entity.student.Group" />
     </session-factory>
 </hibernate-configuration>

@@ -1,5 +1,6 @@
 package com.quasar.hibernateh2.dao.hiber_util;
 
+import com.quasar.hibernateh2.dao.entity.student.Group;
 import com.quasar.hibernateh2.dao.entity.student.Role;
 import com.quasar.hibernateh2.dao.entity.student.Student;
 import java.util.Properties;
@@ -54,6 +55,7 @@ public class HibernateUtil {
                 configuration
                     .addProperties(prop)
                     .addAnnotatedClass(Student.class)
+                    .addAnnotatedClass(Group.class)
                     .addAnnotatedClass(Role.class)
                     ;
             }

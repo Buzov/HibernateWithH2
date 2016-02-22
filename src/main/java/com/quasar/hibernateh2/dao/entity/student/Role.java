@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -15,13 +15,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "role")
 public class Role extends Model implements Serializable {
-    
-    private static final long serialVersionUID = 925752359649949792L;
+        
+    private static final long serialVersionUID = 1990501817629593245L;
 
     @Column(name = "title")
     private String title;
     
-    @OneToMany(mappedBy = "role")
+    @ManyToMany(mappedBy = "roles")
     private Set<Student> students = new HashSet<>();
 
     public Role() {
@@ -47,5 +47,4 @@ public class Role extends Model implements Serializable {
     public String toString() {
         return "Role{" + "title=" + title + '}';
     }
-   
 }

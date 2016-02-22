@@ -19,7 +19,7 @@ public class StudentDAOImpl implements StudentDAO {
             SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
             session = sessionFactory.openSession();
             session.beginTransaction();
-            session.save(stud.getRole());
+            session.save(stud.getGroup());
             session.save(stud);
             session.getTransaction().commit();
         } catch (Exception e) {
@@ -37,7 +37,7 @@ public class StudentDAOImpl implements StudentDAO {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            session.update(stud.getRole());
+            session.update(stud.getGroup());
             session.update(stud);
             session.getTransaction().commit();
         } catch (Exception e) {

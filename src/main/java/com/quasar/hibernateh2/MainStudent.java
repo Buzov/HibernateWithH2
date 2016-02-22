@@ -1,7 +1,7 @@
 package com.quasar.hibernateh2;
 
 import com.quasar.hibernateh2.dao.Factory;
-import com.quasar.hibernateh2.dao.entity.student.Role;
+import com.quasar.hibernateh2.dao.entity.student.Group;
 import com.quasar.hibernateh2.dao.entity.student.Student;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,18 +13,18 @@ public class MainStudent {
 
         Student s1 = new Student();
         Student s2 = new Student();
-        Role r1 = new Role();
+        Group r1 = new Group();
         r1.setTitle("sdf dsfs");
-        Role r2 = new Role();
+        Group r2 = new Group();
         r2.setTitle("sdf sdfs");
         
 
         s1.setName("Ivanov Ivan");
         s1.setAge(21l);
-        s1.setRole(r1);
+        s1.setGroup(r1);
         s2.setName("Petrova Alisa");
         s2.setAge(24l);
-        s2.setRole(r2);
+        s2.setGroup(r2);
                 
         Factory.getInstance().getStudentDAO().addStudent(s1);
         Factory.getInstance().getStudentDAO().addStudent(s2);       
@@ -36,7 +36,7 @@ public class MainStudent {
                         s.getName() + ", age : " + 
                         s.getAge() +",  id : " + 
                         s.getId() + ", role : " + 
-                        s.getRole());
+                        s.getGroup());
                 System.out.println("=============================");              
         }
 //        studs.stream().map((s) -> {
