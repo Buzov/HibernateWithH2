@@ -1,8 +1,38 @@
-2016-02-22 12:00:29 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° "FAMILY" Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°
-Table "FAMILY" not found; SQL statement:
-alter table FAMILY drop constraint FK_c0ooj9bf90dt5pdlppv1t55ye if exists [42102-191]
-2016-02-22 12:06:49 database: flush
+2016-02-22 16:10:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° "ROLE" Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°
+Table "ROLE" not found; SQL statement:
+select max(id) from PUBLIC.role [42102-191]
+2016-02-22 16:11:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° "ROLE" Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°
+Table "ROLE" not found; SQL statement:
+select max(id) from PUBLIC.role [42102-191]
+2016-02-22 16:11:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° "ROLE" Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°
+Table "ROLE" not found; SQL statement:
+select max(id) from PUBLIC.role [42102-191]
+2016-02-22 16:11:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° "STUDENT" Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°
+Table "STUDENT" not found; SQL statement:
+select this_.id as id1_1_1_, this_.age as age2_1_1_, this_.name as name3_1_1_, this_.role_id as role_id4_1_1_, role2_.id as id1_0_0_, role2_.title as title2_0_0_ from PUBLIC.student this_ left outer join PUBLIC.role role2_ on this_.role_id=role2_.id [42102-191]
+2016-02-22 16:12:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° "STUDENT" Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°
+Table "STUDENT" not found; SQL statement:
+
+    alter table PUBLIC.student 
+        drop constraint FK_dec23o17xtja139eoxnnr2m5c if exists [42102-191]
+2016-02-22 16:12:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
+The object is already closed [90007-191]
+2016-02-22 16:12:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
+The object is already closed [90007-191]
+2016-02-22 16:12:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
+The object is already closed [90007-191]
+2016-02-22 16:12:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
+The object is already closed [90007-191]
+2016-02-22 16:13:27 database: flush
 org.h2.message.DbException: Ð’Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½Ñ�Ñ� Ð¾ÑˆÐ¸Ð±ÐºÐ°: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]" [50000-191]
 	at org.h2.message.DbException.get(DbException.java:168)
@@ -39,53 +69,19 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:D:/work
 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
 	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
 	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:850)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:843)
-	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:399)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:842)
-	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:73)
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:54)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:39)
-	at com.quasar.hibernateh2.Main.main(Main.java:16)
+	at com.quasar.hibernateh2.dao.hiber_util.HibernateUtil.<clinit>(HibernateUtil.java:60)
+	at com.quasar.hibernateh2.dao.impl.StudentDAOImpl.addStudent(StudentDAOImpl.java:19)
+	at com.quasar.hibernateh2.MainStudent.main(MainStudent.java:29)
 Caused by: org.h2.jdbc.JdbcSQLException: Ð’Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½Ñ�Ñ� Ð¾ÑˆÐ¸Ð±ÐºÐ°: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]" [50000-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 43 more
+	... 37 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:342)
-	... 38 more
-2016-02-22 12:07:01 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 12:07:01 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 12:07:01 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:02:25 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: Ð¢Ð°Ð±Ð»Ð¸Ñ†Ð° "STUDENT" Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°
-Table "STUDENT" not found; SQL statement:
-alter table student drop constraint FK_dec23o17xtja139eoxnnr2m5c if exists [42102-191]
-2016-02-22 13:03:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:19 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:20 database: flush
+	... 32 more
+2016-02-22 16:13:38 database: flush
 org.h2.message.DbException: Ð’Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½Ñ�Ñ� Ð¾ÑˆÐ¸Ð±ÐºÐ°: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]" [50000-191]
 	at org.h2.message.DbException.get(DbException.java:168)
@@ -106,117 +102,31 @@ General error: "java.lang.IllegalStateException: The file is locked: nio:D:/work
 	at org.h2.engine.Engine.createSession(Engine.java:136)
 	at org.h2.engine.Engine.createSession(Engine.java:28)
 	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
-2016-02-22 13:03:20 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
 	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
 	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
 	at org.h2.Driver.connect(Driver.java:72)
-	at org.netbeans.modules.db.explorer.DbDriverManager.getConnection(DbDriverManager.java:131)
-	at org.netbeans.modules.db.explorer.DatabaseConnection.doConnect(DatabaseConnection.java:904)
-	at org.netbeans.modules.db.explorer.DatabaseConnection.access$200(DatabaseConnection.java:103)
-	at org.netbeans.modules.db.explorer.DatabaseConnection$3.run(DatabaseConnection.java:970)
-	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1423)
-	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:55)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:106)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.buildJdbcConnectionAccess(JdbcServicesImpl.java:260)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:94)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:89)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:178)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
+	at com.quasar.hibernateh2.dao.hiber_util.HibernateUtil.<clinit>(HibernateUtil.java:60)
+	at com.quasar.hibernateh2.dao.impl.StudentDAOImpl.addStudent(StudentDAOImpl.java:19)
+	at com.quasar.hibernateh2.MainStudent.main(MainStudent.java:29)
 Caused by: org.h2.jdbc.JdbcSQLException: Ð’Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½Ñ�Ñ� Ð¾ÑˆÐ¸Ð±ÐºÐ°: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]"
 General error: "java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]" [50000-191]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
-	... 27 more
+	... 37 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/workspace/NetBeansProjects/HibernateH2/test.mv.db [1.4.191/7]
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:342)
-	... 22 more
-2016-02-22 13:03:20 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:20 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:20 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:20 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:20 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:43 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:44 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:44 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:03:44 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:06:53 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:06:53 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:06:53 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:27:56 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:27:56 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:27:56 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:27:56 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:28:10 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:28:12 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:28:12 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:28:12 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:36:48 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:36:48 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 13:36:48 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:34:02 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:34:02 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:34:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:34:03 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:36:13 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:36:13 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:36:15 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
-2016-02-22 14:36:15 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: ÐžÐ±ÑŠÐµÐºÑ‚ ÑƒÐ¶Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚
-The object is already closed [90007-191]
+	... 32 more

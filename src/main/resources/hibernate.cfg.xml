@@ -7,15 +7,16 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="hibernate.connection.driver_class">org.h2.Driver</property>
-        <property name="hibernate.connection.url">jdbc:h2:./test</property>
+        <!--<property name="hibernate.connection.url">jdbc:h2:./test</property>-->
         <property name="hibernate.connection.username"/>
         <property name="hibernate.connection.password"/>
         <property name="hibernate.default_schema">PUBLIC</property>
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">create</property>
         <!--<property name="hibernate.hbm2ddl.auto" value="update"/>-->
-        <!-- SQL dialect -->
-        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+      
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>
         <!-- Disable the second-level cache  -->

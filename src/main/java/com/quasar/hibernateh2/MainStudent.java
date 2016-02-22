@@ -30,10 +30,10 @@ public class MainStudent {
         Factory.getInstance().getStudentDAO().addStudent(s2);       
         
         List<Student> studs = Factory.getInstance().getStudentDAO().getAllStudents();
-        System.out.println("========��� ��������=========");
+        System.out.println("========All students=========");
         for(Student s : studs) {
-                System.out.println("��� �������� : " + 
-                        s.getName() + ", ������� : " + 
+                System.out.println("Name of students : " + 
+                        s.getName() + ", age : " + 
                         s.getAge() +",  id : " + 
                         s.getId() + ", role : " + 
                         s.getRole());
