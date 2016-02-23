@@ -22,8 +22,8 @@ public class HibernateUtil {
             Properties prop = new Properties();
             prop.setProperty("hibernate.connection.driver_class", "org.h2.Driver");
             prop.setProperty("hibernate.connection.url", "jdbc:h2:./test");
-            prop.setProperty("hibernate.connection.username", "");
-            prop.setProperty("hibernate.connection.password", "");
+            prop.setProperty("hibernate.connection.username", "admin");
+            prop.setProperty("hibernate.connection.password", "admin");
             prop.setProperty("hibernate.default_schema", "PUBLIC");
             // SQL dialect
             prop.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
@@ -42,7 +42,7 @@ public class HibernateUtil {
             if (initFromXML) {
                 
                 configuration.configure();
-                configuration.setProperty("hibernate.connection.url", "jdbc:h2:./test2");
+                configuration.setProperty("hibernate.connection.url", "jdbc:h2:./test");
                 //При вызове метода configure() без параметров, настройки беруться из файла nibernate.cfg.xml
                 // new Configuration().addResource("hibernate.cfg.xml").configure();
                 // configuration.configure("/com/rtw/test/hiber/hibernate.cfg.xml");

@@ -24,7 +24,7 @@ public class Student extends Model implements Serializable {
     @Column(name = "age")
     private Long age;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne//(fetch = FetchType.EAGER)
     @JoinColumn(name = "group_id")
     private Group group;
 

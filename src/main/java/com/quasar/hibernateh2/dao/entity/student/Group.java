@@ -13,10 +13,14 @@ import javax.persistence.Table;
  * @author artur
  */
 @Entity
-@Table(name = "group")
+@Table(name = "group_s")
+/* Group это зарезервированное SQL слово, а имя таблицы не экранируется в ORM по 
+* некоторым объективным причинам (не могу вспомнить, где я объяснение видел). 
+* Назовите класс или таблицу иначе, либо добавьте экранирование @Table(name="\"group\"")
+*/
 public class Group extends Model implements Serializable {
     
-    private static final long serialVersionUID = 925752359649949792L;
+    private static final long serialVersionUID = 565752359649949792L;
 
     @Column(name = "title")
     private String title;
